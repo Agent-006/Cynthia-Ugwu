@@ -4,8 +4,9 @@ const scroll = new LocomotiveScroll({
 });
 
 let timeout;
+let crsr = document.querySelector('#cursor');
 
-function skewCursorEffect() {
+(function skewCursorEffect() {
 
     let xscale = 1;
     let yscale = 1;
@@ -20,7 +21,7 @@ function skewCursorEffect() {
         let ydiff = dets.clientX - yprev;
 
         xscale = gsap.utils.clamp(.8, 1.2, xdiff);
-        yscale = gsap.utils.clamp(.6, 1.2, ydiff);
+        yscale = gsap.utils.clamp(.8, 1.2, ydiff);
 
         xprev = dets.clientX;
         yprev = dets.clientY;
@@ -32,18 +33,14 @@ function skewCursorEffect() {
             crsr.style.transform = `translate(${dets.clientX - 5}px, ${dets.clientY - 5}px) scale(1, 1)`;
         }, 100);
     })
-}
-
-skewCursorEffect();
+})();
 
 function customCursor(xscale, yscale) {
     window.addEventListener("mousemove", function (dets) {
-        let crsr = document.querySelector('#cursor');
 
         crsr.style.transform = `translate(${dets.clientX}px, ${dets.clientY}px) scale(${xscale}, ${yscale})`;
     })
 }
-
 
 (function animate() {
     let tl = gsap.timeline();
@@ -78,3 +75,38 @@ function customCursor(xscale, yscale) {
         ease: Expo.easeInOut,
     })
 })();
+
+
+
+let elements = document.querySelectorAll('.elem');
+
+elements.forEach(function (element) {
+    let rotate = 0;
+    let diffRotate = 0;
+
+    element.addEventListener('mousemove', function (dets) {
+        let distFromTop = element.getBoundingClientRect().top;
+        let diff = dets.clientY - distFromTop;
+        diffRotate = rotate - dets.clientX;
+        rotate = dets.clientX;
+
+        let image = element.querySelector('img');
+
+        gsap.to(image, {
+            opacity: 1,
+            ease: Power3,
+            top: diff,
+            left: dets.clientX,
+            rotate: gsap.utils.clamp(-20, 20, diffRotate * 0.5),
+        })
+    });
+
+    element.addEventListener('mouseleave', function (dets) {
+        let image = element.querySelector('img');
+        gsap.to(image, {
+            opacity: 0,
+            ease: Power3,
+            duration: .5,
+        })
+    });
+});
