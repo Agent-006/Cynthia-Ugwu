@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,19 +10,20 @@ html, body {
     width: 100%;
 }
 
-#main{
+#main {
     width: 100%;
+    background-color: black;
 }
 
-#hero{
+#hero {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    
+
     color: #fff;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     background-color: black;
     padding: 0vw 3vw;
 }
@@ -37,7 +38,7 @@ html, body {
     justify-content: space-between;
 }
 
-#nav a{
+#nav a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2vw;
@@ -48,18 +49,18 @@ html, body {
     margin-top: 4.5vw;
 }
 
-#heading #below{
+#heading #below {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
 }
 
-#heading #second-h1{
+#heading #second-h1 {
     margin-left: 11vw;
 }
 
-#heading h1{
+#heading h1 {
     font-size: 10.4vw;
     text-transform: uppercase;
     font-weight: 500;
@@ -67,7 +68,7 @@ html, body {
     line-height: .85;
 }
 
-#heading h5{
+#heading h5 {
     font-size: 1.05vw;
     font-weight: 500;
     text-transform: uppercase;
@@ -75,11 +76,11 @@ html, body {
     line-height: 4.3;
 }
 
-#subheadings{
+#subheadings {
     width: 100%;
 }
 
-#subheadings h5{
+#subheadings h5 {
     font-size: 1.05vw;
     text-transform: uppercase;
     font-weight: 500;
@@ -92,11 +93,10 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    margin-bottom: 1.5vw ;
+    margin-bottom: 1.5vw;
 }
 
-#herobase a{
+#herobase a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -104,7 +104,7 @@ html, body {
     font-weight: 500;
 }
 
-#herobase a i{
+#herobase a i {
     margin-left: .5vw;
 }
 
@@ -112,7 +112,7 @@ html, body {
     display: flex;
 }
 
-#herobase .circle{
+#herobase .circle {
     background-color: #a3a3a3;
     color: black;
     height: 25px;
@@ -123,19 +123,158 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 .2vw;
+    margin: 0.2vw;
     overflow: hidden;
 }
 
-#herobase .circle i{
+#herobase .circle i {
     font-weight: 900;
     transform: translateY(-10px);
     transition: transform .5s;
 }
 
-#herobase .circle:hover i{
+#herobase .circle:hover i {
     font-weight: 900;
     transform: translateY(9px);
+}
+
+
+#second {
+    padding: 11vw 3vw 6vw 3vw;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    color: #a3a3a3;
+}
+
+.elem {
+    position: relative;
+    width: 86.52vw;
+    border-top: 1px solid #888;
+    font-size: 7.3vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 3vw 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.elem span {
+    font-size: 1vw;
+    color: #fff;
+}
+
+.elemlast {
+    border-bottom: 1px solid #888;
+}
+
+.elem img {
+    /* opacity: 0; */
+    display: none;
+    height: 140%;
+    z-index: 99;
+    position: absolute;
+}
+
+#about {
+    padding: 5vw 5vw 0 40vw;
+    width: 100%;
+    min-height: 80vh;
+    background-color: black;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+}
+
+#txtabout {
+    width: 29.5rem;
+    /* background-color: red; */
+}
+
+#txtabout h5 {
+    text-transform: uppercase;
+    color: #a3a3a3;
+    margin-bottom: 6px;
+}
+
+#txtabout p {
+    font-size: 1.2vw;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+#txtabout a {
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding: 6px 22px;
+    text-decoration: none;
+    color: #fff;
+}
+
+#about img {
+    width: 200px;
+}
+
+#subscribe {
+    padding: 1vw 3vw;
+    width: 100%;
+    background-color: black;
+}
+
+#subscribe h5 {
+    text-transform: uppercase;
+    color: #a3a3a3;
+
+}
+
+#subscribe a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 40px;
+}
+
+#subscribe a i {
+    margin-left: .5vw;
+}
+
+#footer {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8.9vw 3vw 1vw 3vw;
+}
+
+#left {
+    display: flex;
+    gap: 2vw;
+}
+
+#left h4 {
+    font-size: 1vw;
+    color: #fff;
+}
+
+#right {
+    display: flex;
+    gap: 2vw;
+}
+
+#right a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1vw;
 }
 
 
@@ -144,33 +283,21 @@ html, body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 600px){
-    #heading{
+@media (max-width: 600px) {
+    #heading {
         margin-top: 1vw;
     }
-    
-    #heading h1{
+
+    #heading h1 {
         font-size: 12.4vw;
     }
 
-    #heading h5{
+    #heading h5 {
         font-size: 2vw;
 
     }
-    
-    #subheadings h5{
+
+    #subheadings h5 {
         font-size: 2vw;
     }
 }
